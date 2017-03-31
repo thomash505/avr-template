@@ -10,7 +10,7 @@ for arg in sys.argv[2:]:
     includes += '#include "' + os.path.join(module, module + '.h') + '"\n'
     init_functions += '    ' + module + '::init();\n'
 
-f = open(source_dir + '/application.cpp', 'w+')
+f = open(os.path.join(source_dir, 'application.cpp'), 'w+')
 
 f.write('// THIS IS AN AUTOMATICALLY GENERATED FILE, DO NOT EDIT\n' + includes + '\nvoid application::init()\n{\n' + init_functions + '}')
 
